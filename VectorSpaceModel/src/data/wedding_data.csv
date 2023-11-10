@@ -1,0 +1,5 @@
+document,filepath,content
+d1,./VectorSpaceModel/src/data/d1.txt,User selected Wedding gown.
+d2,./VectorSpaceModel/src/data/d2.txt,User ordered on-line rose flowers.
+d3,./VectorSpaceModel/src/data/d3.txt,User searched diamond ring.
+d4,./VectorSpaceModel/src/data/d4.txt,"User selected white wedding gown, online flowers, 3 carat diamond ring."
