@@ -1,22 +1,25 @@
-from sample import load_data, preprocess_data
+from load import load_metadata
+from sample import preprocess_data
 from explore import plot_data
 from modify import transform_data
 from model import calculate_similarity
 from assess import get_top_similar
 
 def main():
-    # Sample
-    data = load_data('data/wedding_data.csv')
-    data = preprocess_data(data)
+    # load metadata
+    doc_df = load_metadata('./src/data')
+
+    # Preprocess
+    doc_df = preprocess_data(doc_df)
 
     # Explore
-    plot_data(data, 'wedding_gown')
+    plot_data(doc_df, 'content')
 
     # Modify
-    vectors, vectorizer = transform_data(data, 'wedding_gown')
+    vectors, vectorizer = transform_data(doc_df, 'content')
 
     # Model
-    similarity_matrix = calculate_similarity(vectors)
+    similarity_matrix = calculate_similarity(vectors, vectorizer, ['gown', 'rose', 'diamond', 'flowers'])
 
     # Assess
     top_similar = get_top_similar(similarity_matrix, 5)
